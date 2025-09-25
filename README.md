@@ -56,20 +56,19 @@ root/
 ## 💻 Local Development Setup
 
 ### Backend (FastAPI)
-cd backend
-python -m venv .venv
-Activate venv:
-#Linux/macOS → source .venv/bin/activate
-#Windows     → .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+- cd backend
+- python -m venv .venv
+- Activate venv:
+  -#Linux/macOS → source .venv/bin/activate
+  -#Windows     → .venv\Scripts\activate
+  -pip install -r requirements.txt
+  -uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 ## Frontend (Angular)
-cd frontend
-npm install
-ng serve --open
+- cd frontend
+- npm install
+- ng serve --open
 
-```
 
 ---
 
@@ -100,4 +99,5 @@ Special thanks to the open-source community and contributors whose tools and lib
 
 
 ---
+
 
