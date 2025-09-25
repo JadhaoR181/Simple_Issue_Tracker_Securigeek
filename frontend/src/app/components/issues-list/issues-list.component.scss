@@ -1,0 +1,225 @@
+  /* Toolbar Card */
+  .toolbar-card {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  /* Toolbar Layout */
+  .filters-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    .search-field,
+    .filter-field {
+      flex: 1;
+      min-width: 160px;/* solid background */
+      border-radius: 12px;
+
+      .mat-form-field-flex {
+        padding: 0 12px;
+        height: 40px;
+        align-items: center;
+      }
+
+      input.mat-input-element,
+      .mat-select-trigger {
+        height: 38px;
+        line-height: 38px;
+        color: #111827;
+        font-size: 14px;
+      }
+
+      mat-label {
+        color: #6b7280;
+        font-size: 12px;
+      }
+
+      /* Dropdown menu */
+      .mat-select-panel {
+        background: #ffffff !important;
+        color: #111827 !important;
+        border-radius: 8px;
+      }
+    }
+
+    .search-field {
+      flex: 2; /* slightly larger */
+    }
+
+    .create-btn {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      height: 40px;
+      padding: 0 18px;
+      border-radius: 12px;
+      background: #3b82f6;
+      color: #fff;
+      transition: background 0.2s ease, transform 0.2s ease;
+
+      mat-icon {
+        font-size: 20px;
+      }
+
+      &:hover {
+        background: #2563eb;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .filters-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+
+      .create-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .table-card {
+      padding: 12px 8px;   // Reduce padding on small screens
+      border-radius: 8px;  // Slightly smaller radius for compactness
+
+      .table-container {
+        overflow-x: auto;   // Enable horizontal scrolling for wide tables
+
+        table {
+          min-width: 600px; // Ensure table doesn't shrink too much and allows scrolling
+        }
+      }
+    }
+  }
+
+  /* Table Card */
+  .table-card {
+    background: #1e293b !important;
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-spacing: 0;
+
+    th {
+      color: #e0e0e0;
+      font-weight: 600;
+      background: #1e293b;
+      cursor: pointer;
+      padding: 12px;
+      text-align: left;
+
+      mat-icon {
+        vertical-align: middle;
+        font-size: 18px;
+        margin-left: 4px;
+      }
+    }
+
+    td {
+      color: #f0f0f0;
+      padding: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+      a {
+        color: #d8dadc;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transition: background 0.2s;
+    }
+  }
+
+  /* Status Badges */
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    &.open {
+      background: rgba(76, 175, 80, 0.2);
+      color: #4caf50;
+    }
+    &.in_progress {
+      background: rgba(255, 193, 7, 0.2);
+      color: #ffc107;
+    }
+    &.closed {
+      background: rgba(244, 67, 54, 0.2);
+      color: #f44336;
+    }
+  }
+
+  /* Priority Badges */
+  .priority-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    &.low {
+      background: rgba(33, 150, 243, 0.2);
+      color: #2196f3;
+    }
+    &.medium {
+      background: rgba(255, 152, 0, 0.2);
+      color: #ff9800;
+    }
+    &.high {
+      background: rgba(244, 67, 54, 0.2);
+      color: #f44336;
+    }
+  }
+
+  /* Paginator */
+  mat-paginator {
+    background: transparent;
+    color: #e0e0e0;
+    .mat-mdc-select-value {
+      color: #e0e0e0;
+    }
+
+    .mat-mdc-paginator-range-label {
+      color: #bdbdbd;
+      cursor: pointer;
+    }
+  }
+
+

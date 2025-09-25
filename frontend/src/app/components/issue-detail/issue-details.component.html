@@ -1,0 +1,61 @@
+<div *ngIf="loading" class="loading">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div *ngIf="error" class="error-message">
+  {{ error }}
+</div>
+
+<div *ngIf="issue" class="issue-detail-container">
+  <mat-card class="issue-card">
+    <mat-card-header>
+      <mat-card-title>
+        Issue #{{ issue.id }}: {{ issue.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        <span class="status">Status: {{ issue.status | titlecase }}</span> |
+        <span class="priority">Priority: {{ issue.priority | titlecase }}</span>
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="info-row">
+        <strong>Assignee:</strong>
+        <span>{{ issue.assignee || 'Unassigned' }}</span>
+      </div>
+
+      <div class="info-row">
+        <strong>Created At:</strong>
+        <span>{{ issue.created_at | date:'medium' }}</span>
+      </div>
+
+      <div class="info-row">
+        <strong>Updated At:</strong>
+        <span>{{ issue.updated_at | date:'medium' }}</span>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="description">
+        <h3>Description:</h3>
+        <p>{{ issue.description || 'No description provided.' }}</p>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="json-section">
+        <h3>Full JSON:</h3>
+        <pre>{{ issue | json }}</pre>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions class="actions">
+      <button mat-raised-button color="primary" [routerLink]="['/issues', issue.id, 'edit']">
+        ✏️ Edit Issue
+      </button>
+      <button mat-stroked-button color="warn" routerLink="/issues">
+        ⬅️ Back to List
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

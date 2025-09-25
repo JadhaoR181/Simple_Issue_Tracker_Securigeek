@@ -1,0 +1,23 @@
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212; // dark mode background
+  color: #fff;
+}
+
+
+.app-toolbar {
+  background: #1e293b; // dark slate blue
+  color: #fff;
+  font-weight: 500;
+}
+
+.main-container {
+  padding: 20px;
+  background: #f9fafb; // light gray background
+  min-height: calc(100vh - 64px); // account for toolbar height
+  flex: 1;
+
+}

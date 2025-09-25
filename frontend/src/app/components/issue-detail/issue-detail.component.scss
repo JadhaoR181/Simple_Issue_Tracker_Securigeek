@@ -1,0 +1,121 @@
+.issue-detail-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.issue-card {
+  padding: 16px;
+
+  mat-card-header {
+    margin-bottom: 12px;
+
+    mat-card-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1976d2;
+    }
+
+    mat-card-subtitle {
+      font-size: 0.95rem;
+      color: #666;
+
+      .status {
+        font-weight: 500;
+        color: #388e3c; // green for status
+      }
+
+      .priority {
+        font-weight: 500;
+        color: #d32f2f; // red for priority
+      }
+    }
+  }
+
+  mat-card-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    .info-row {
+      margin: 6px 0;
+
+      strong {
+        display: inline-block;
+        width: 120px;
+        color: #333;
+      }
+
+      span {
+        color: #555;
+      }
+    }
+
+    .description {
+      margin: 15px 0;
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+        color: #424242;
+      }
+
+      p {
+        background: #fafafa;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        color: #1e1e1e;
+      }
+    }
+
+    .json-section {
+      margin-top: 15px;
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+      }
+
+      pre {
+        background: #1e1e1e;
+        color: #e0e0e0;
+        padding: 12px;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 12px;
+
+    button {
+      font-weight: 500;
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+
+  mat-spinner {
+    margin: auto;
+  }
+}
+
+.error-message {
+  color: #d32f2f;
+  font-weight: 500;
+  text-align: center;
+  padding: 20px;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 6px;
+  max-width: 600px;
+  margin: 20px auto;
+}

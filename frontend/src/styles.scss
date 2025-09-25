@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-theme-primary: mat.m2-define-palette(mat.$m2-indigo-palette, A400, A100, A700);
+$my-theme-accent: mat.m2-define-palette(mat.$m2-indigo-palette);
+$my-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$my-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $my-theme-primary,
+    accent: $my-theme-accent,
+    warn: $my-theme-warn,
+  )
+));
+
+@include mat.all-component-themes($my-theme);
+
+:root {
+  --mat-table-background-color: #1e293b;
+  --mat-table-row-background-color: #1e293b;
+  --mat-table-header-background-color: #1e293b;
+  --mat-table-row-color: #fff;
+  --mat-table-header-color: #fff;
+}
+
+body {
+  background: #1e293b !important;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+html {
+  background: #1e293b !important;
+  min-height: 100vh;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+app-root, .main-container {
+  background: transparent !important;
+}
+
+
